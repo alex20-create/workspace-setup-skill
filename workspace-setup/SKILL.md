@@ -51,8 +51,8 @@ map that names the concrete tools and places. It can be a section titled
 `workspace-setup local map` in the user's own instructions (a `CLAUDE.md` in
 Claude Code, read from disk), a section titled `Local map for this install` in
 this file (added when the skill was packaged for one person's claude.ai
-account), or the custom instructions of the current claude.ai Project, if they
-name these things. Where several exist, the most specific wins line by line;
+account), or the custom instructions of the claude.ai Project being built or
+revised, if they name these things. Where several exist, the most specific wins line by line;
 `references/local-map.md` gives the order. The instructions of the Project this
 session runs in govern how you behave here; they are not the content of the
 workspace you are building, unless that workspace is the same Project.
@@ -60,6 +60,9 @@ workspace you are building, unless that workspace is the same Project.
 Names in a map are hints, not exact strings: a session may list a skill with a
 plugin prefix (`anthropic-skills:skill-improver` for `skill-improver`). Match by
 the last part of the name, or by the description when the name differs.
+
+A map does not replace checking: confirm that what it names can be reached in
+this session, and say in the step 2 inventory what could not.
 
 A map can name: the CLAUDE.md template picker and where its template collection
 lives; the notes vault and where project notes go; the project manager where

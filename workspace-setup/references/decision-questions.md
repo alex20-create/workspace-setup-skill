@@ -16,6 +16,8 @@ What I found
 - <source>: ...
 - Contradiction: <source A> says <x>, <source B> says <y>.
 - Could not read: <source the map names or discovery found>, because <reason>.
+  Access that would fix it: <link the chat | connect the folder | attach the
+  file | add the repository>. Grant it before I draft?
 
 Questions (proposed answer in each; change what is wrong)
 
