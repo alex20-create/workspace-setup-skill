@@ -10,7 +10,7 @@ and preferences out of a skill that may be shared.
 |---|---|
 | Claude Code | A `workspace-setup local map` section in the user-level `CLAUDE.md` (or a workspace-level one, if the setup is per workspace). |
 | claude.ai, packaged skill | A `Local map for this install` section inserted into this skill's `SKILL.md` when it was packaged for one person. |
-| claude.ai Project | The Project's custom instructions, if they name the tools below. |
+| claude.ai Project | The custom instructions of the Project being built or revised, if they name the tools below. The instructions of another Project the session happens to run in govern behaviour only, not this map. |
 
 If more than one exists, read them all and, line by line, the most specific
 wins: Project instructions, then the workspace `CLAUDE.md`, then the user-level
