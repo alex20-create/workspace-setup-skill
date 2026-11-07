@@ -19,7 +19,9 @@ a copy loaded into the session at its start can predate an edit.
 
 ## What it holds
 
-Only what this skill needs; anything else belongs elsewhere.
+Only what this skill needs; anything else belongs elsewhere. A map packaged
+for claude.ai may also carry rules shared by all of a user's skills; this skill
+uses only the lines that bear on it.
 
 ```markdown
 # workspace-setup local map
@@ -51,7 +53,8 @@ Look at what this session can actually reach, and match it to the roles above:
   template collection is that skill's business: record it if seen, but
   discovery does not need it.
 - **Connectors**: project managers, document stores, design tools. Each is a
-  candidate source for some kind of data.
+  candidate source for some kind of data. Where no tool lists connectors, infer
+  them from the names of the tools the session offers.
 - **Files**: in Claude Code, the user-level and workspace `CLAUDE.md`, the
   current folder, and any folder they point to (a vault, a template
   collection).

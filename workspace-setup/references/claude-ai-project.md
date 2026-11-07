@@ -90,6 +90,9 @@ how to reach them, without copying their content.
 | Design system | <design source> | <url> | Tokens and components |
 ```
 
+A source the Project can reach only through the user's linked computer gets its
+full path in the map and a note that it is readable only in a linked chat.
+
 Add more documents only when a source cannot be reached from the Project at all
 (no connector, no web access) and Claude needs the content to work. Such a copy
 starts with a generated header and is replaced, never edited, when the source
