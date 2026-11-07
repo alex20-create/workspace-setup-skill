@@ -53,7 +53,13 @@ Claude Code, read from disk), a section titled `Local map for this install` in
 this file (added when the skill was packaged for one person's claude.ai
 account), or the custom instructions of the current claude.ai Project, if they
 name these things. Where several exist, the most specific wins line by line;
-`references/local-map.md` gives the order.
+`references/local-map.md` gives the order. The instructions of the Project this
+session runs in govern how you behave here; they are not the content of the
+workspace you are building, unless that workspace is the same Project.
+
+Names in a map are hints, not exact strings: a session may list a skill with a
+plugin prefix (`anthropic-skills:skill-improver` for `skill-improver`). Match by
+the last part of the name, or by the description when the name differs.
 
 A map can name: the CLAUDE.md template picker and where its template collection
 lives; the notes vault and where project notes go; the project manager where
@@ -63,7 +69,8 @@ CLAUDE.md; language and style rules for drafts; and existing workspaces that
 show what works. Whatever the map says overrides the defaults in this skill.
 
 With no map, discover: list the connectors, skills and file access this session
-has, and note which of the roles above each one could fill. Use what you find,
+has (where no tool lists connectors, infer them from the names of the tools the
+session offers), and note which of the roles above each one could fill. Use what you find,
 say what you assumed, and at the end (step 6) offer to write a map so the next
 run does not have to discover again. `references/local-map.md` has the format
 and the discovery checklist.
@@ -97,7 +104,11 @@ in every source the map or discovery turned up:
   can reach them), a design system;
 - handoff, memory or session-log files the setup keeps, checked against the
   live state (they go stale);
-- this conversation: what the user has already said.
+- this conversation: what the user has already said;
+- drafts that already exist (in this conversation, in files, or the
+  instructions of an existing Project the user pastes). They are the starting
+  point: the questions in step 3 cover only what they leave open, and the drafts
+  in step 4 are revisions of them, not new text.
 
 Only read. Then write a short inventory and show it with the questions: each
 source, what kind of data it holds (tasks, decisions, specs, design tokens,
@@ -105,7 +116,10 @@ code), and any contradiction (two places, or two files within one source,
 claiming different things about the same fact). The inventory is what step 3
 asks about and what the drafts link to. If a source the map names or discovery found cannot be reached in this session (an
 existing claude.ai Project's instructions, often), say so in the inventory; do
-not fill the gap from memory.
+not fill the gap from memory. Say also what would give access (linking the chat
+to the computer, connecting a folder, attaching the file, adding the
+repository) and ask for it in the step 3 batch; do not request access on your
+own.
 
 ## 3. Ask every decision question in one round
 
@@ -115,12 +129,16 @@ The batch covers:
 
 1. **Target**, only if step 1 left it open.
 2. **Purpose**: what this workspace is for, and what it is not for. For a
-   claude.ai Project, also its name and one-line description.
+   claude.ai Project, also its name and one-line description. Also whether a
+   workspace for this work already exists: claude.ai Projects cannot be listed
+   from a session, so ask, and if one exists, ask the user to paste its
+   instructions.
 3. **Source of truth per kind of data**: for each kind found in the inventory,
    which source wins. The "where each thing lives" part of the drafts is built
    from this answer. For a claude.ai Project, also how the Project reaches each
    source: a connector or synced integration (stays current), a link it can
-   open, or a generated copy uploaded to it.
+   open, the user's computer when the chat is linked to it (only in chats that
+   have the link), or a generated copy uploaded to it.
 4. **Permissions, in three tiers**: what Claude does without asking, what it
    does after a yes, and what it does only when asked. For a Claude Code
    folder, also whether to enforce part of them in the folder's permission
@@ -132,7 +150,7 @@ The batch covers:
 
 For each question, propose an answer drawn from the inventory or the map and
 say where it came from; the user confirms or corrects. Where nothing supports a
-proposal, leave the answer open instead of guessing. If the user already
+proposal, leave the answer open instead of guessing. If the user or the local map already
 answered something in their request, show it as settled rather than asking
 again. A structured question tool may be used if it fits the whole batch in one
 round; if it limits the number of questions, ask in a single message instead.
@@ -171,9 +189,11 @@ clean-subagent dry run, for example). If that skill accepts only skills as
 targets, follow its protocol directly: launch one subagent with the drafts and
 the request, no other context, and ask for its doubts. Before launching, state
 the estimated cost, taking the reference figure from the instruction-testing
-skill if it gives one and saying whose figure it is, and launch only on a yes. Where
-there are no subagents (claude.ai), say that a clean test is not possible here
-and offer it for a Claude Code session.
+skill if it gives one and saying whose figure it is, and launch only on a yes.
+Whether a clean test is possible depends on the session having a subagent tool,
+not on where it runs: where there is none, say so and offer the test for a
+session that has one. If the drafts were already tested with a fresh agent in
+this conversation, say so and offer a re-test only for what changed since.
 
 Fix what the test finds that is real, show the changes, and move on.
 
@@ -205,4 +225,6 @@ Then offer, one at a time and only where the map or discovery found the tool:
 - Install plugins, connectors, hooks or MCP servers: the automation recommender
   proposes those, and the user decides.
 - Edit the sources it links to. If a source is wrong, the skill says so and the
-  user fixes it there.
+  user fixes it there. The one exception: when the user takes a decision during
+  this run that changes a source, show the exact change and write it only on an
+  explicit yes.

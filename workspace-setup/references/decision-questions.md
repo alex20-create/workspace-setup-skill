@@ -5,7 +5,7 @@ structured question tool that holds it all): the inventory first, then
 the questions, each with a proposed answer and where the proposal came from.
 The user should be able to reply "all fine except 4" and be done.
 
-Leave out what step 1 or the user's request already settled; show it as settled
+Leave out what step 1, the user's request or the local map already settled; show it as settled
 at the top instead, so the user can still correct it.
 
 ## Template
@@ -25,6 +25,8 @@ Questions (proposed answer in each; change what is wrong)
 2. Purpose: what is this workspace for, and what is it not for?
    Proposed: "<one sentence>". Not for: <...>.
    claude.ai Project only: name "<...>", description "<one line>".
+   Does a workspace for this work already exist? <yes, paste its
+   instructions | no>.
 
 3. Which source wins for each kind of data?
    (one row per kind the inventory found; these rows are only examples)
@@ -34,7 +36,8 @@ Questions (proposed answer in each; change what is wrong)
    - Code and how to run it: <source>
    - <other kind found>: <source>
    - claude.ai Project only: how it reaches each source
-     (connector | link | generated copy uploaded).
+     (connector | link | linked computer, only in linked chats |
+     generated copy uploaded).
 
 4. Permissions
    a. Without asking: <...>
