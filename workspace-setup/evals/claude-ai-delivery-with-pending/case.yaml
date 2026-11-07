@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: claude-ai-delivery-with-pending
+expected_outcome: |
+  Does not re-ask what the user already answered. Produces Project instructions as one pasteable block, and at most one context document that maps links to the sources without copying their content. The undecided season 2 release schedule appears as PENDING, not invented. Says plainly that it cannot create the claude.ai Project itself and gives the steps to create it, paste the instructions and upload the document.
