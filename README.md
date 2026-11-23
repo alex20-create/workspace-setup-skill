@@ -17,7 +17,7 @@ It reuses the tools you already have instead of redoing their work: a CLAUDE.md 
 
 ## Local map
 
-The skill holds the method; your setup goes in a **local map**: a short section, in your own instructions, that names your template picker, vault, project manager and style rules. In Claude Code, add a `workspace-setup local map` section to your user-level `CLAUDE.md`. Without a map, the skill discovers what the session can reach and offers to write one at the end. The format is in [`workspace-setup/references/local-map.md`](workspace-setup/references/local-map.md).
+The skill holds the method; your setup goes in a **local map**: a short file of your own that names your template picker, vault, project manager and style rules. In Claude Code, keep it as `workspace-setup.md` in a folder for local maps and name that folder with one line in your user-level `CLAUDE.md`; the map itself stays out of `CLAUDE.md`, which loads whole into every session. A map you already keep as a section there still works. Without a map, the skill discovers what the session can reach and offers to write one at the end. The format is in [`workspace-setup/references/local-map.md`](workspace-setup/references/local-map.md).
 
 ## Install
 

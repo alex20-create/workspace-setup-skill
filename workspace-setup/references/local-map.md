@@ -8,14 +8,15 @@ and preferences out of a skill that may be shared.
 
 | Environment | Place |
 |---|---|
-| Claude Code | A `workspace-setup local map` section in the user-level `CLAUDE.md` (or a workspace-level one, if the setup is per workspace). |
+| Claude Code | A file, `workspace-setup.md`, in the folder the user's `CLAUDE.md` names for local maps, or the file a `workspace-setup local map` section points to. The pointer sits in the user-level `CLAUDE.md`, or in a workspace-level one if the setup is per workspace. A section that holds the whole map, the older form, still counts. |
 | claude.ai, packaged skill | A `Local map for this install` section inserted into this skill's `SKILL.md` when it was packaged for one person. |
 | claude.ai Project | The custom instructions of the Project being built or revised, if they name the tools below. The instructions of another Project the session happens to run in govern behaviour only, not this map. |
 
 If more than one exists, read them all and, line by line, the most specific
-wins: Project instructions, then the workspace `CLAUDE.md`, then the user-level
-one, then the packaged section. Read `CLAUDE.md` files from disk where you can:
-a copy loaded into the session at its start can predate an edit.
+wins: Project instructions, then the map a workspace `CLAUDE.md` points to or
+holds, then the user-level one, then the packaged section. Read `CLAUDE.md`
+files and map files from disk where you can: a copy loaded into the session
+at its start can predate an edit.
 
 ## What it holds
 
@@ -67,8 +68,19 @@ that were not seen.
 ## Offering to write the map
 
 At the end of a run that had to discover, offer to write the map with what was
-found and what the user confirmed in step 3. Show the section first. Write it
-only on a yes, and only in Claude Code, where the user-level `CLAUDE.md` is a
-file this session can reach. In claude.ai, give the section as text and say
-where it would go (Project instructions, or the user's own notes for the next
-time the skill is packaged).
+found and what the user confirmed in step 3. Show the map first. Write it only
+on a yes, and only in Claude Code, where this session can reach the user's
+files: as `workspace-setup.md` in the folder their `CLAUDE.md` already names
+for local maps, else in one they pick (`~/.claude/local-maps/` is a common
+choice). When no `CLAUDE.md` names that folder yet, show and add one line to
+the user-level one that does:
+
+```markdown
+Local maps: each skill's local map is the file `<folder>/<skill-name>.md`. Read it from disk, in full, before following that skill.
+```
+
+One line serves every skill. The map's content never goes into a `CLAUDE.md`,
+which loads whole into every session. A map that is still a full section
+there keeps working: offer once to move it to a file. In claude.ai, give the
+map as text and say where it would go (Project instructions, or the user's own
+notes for the next time the skill is packaged).

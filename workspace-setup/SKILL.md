@@ -47,12 +47,17 @@ rules may require English while the Project instructions do not).
 ## Local map first
 
 The skill is generic; the user's setup is not. Before step 1, look for a local
-map that names the concrete tools and places. It can be a section titled
-`workspace-setup local map` in the user's own instructions (a `CLAUDE.md` in
-Claude Code, read from disk), a section titled `Local map for this install` in
-this file (added when the skill was packaged for one person's claude.ai
-account), or the custom instructions of the claude.ai Project being built or
-revised, if they name these things. Where several exist, the most specific wins line by line;
+map that names the concrete tools and places. In Claude Code it is a file of
+the user's own, kept outside this skill's folder, that their `CLAUDE.md`
+files point to (read them from disk): they either name the folder where local
+maps are kept, and the map is `workspace-setup.md` in it, or carry a section
+titled `workspace-setup local map` that points to the file or, in an older
+setup, holds the map itself. Read the file in full; if the pointer leads to
+no file, say so and go on as with no map. A map can also be a section titled
+`Local map for this install` in this file (added when the skill was packaged
+for one person's claude.ai account), or the custom instructions of the
+claude.ai Project being built or revised, if they name these things. Where
+several exist, the most specific wins line by line;
 `references/local-map.md` gives the order. The instructions of the Project this
 session runs in govern how you behave here; they are not the content of the
 workspace you are building, unless that workspace is the same Project.
@@ -76,8 +81,8 @@ With no map, discover: list the connectors, skills and file access this session
 has (where no tool lists connectors, infer them from the names of the tools the
 session offers), and note which of the roles above each one could fill. Use what you find,
 say what you assumed, and at the end (step 6) offer to write a map so the next
-run does not have to discover again. `references/local-map.md` has the format
-and the discovery checklist.
+run does not have to discover again. `references/local-map.md` has the format,
+the discovery checklist and where the map is written.
 
 ## 1. Detect the target
 
@@ -222,7 +227,8 @@ Then offer, one at a time and only where the map or discovery found the tool:
   the vault's conventions give this kind of work a note (the map may say which
   kinds do);
 - the automation recommender, when the folder is a code repository;
-- writing a local map, if this run had to discover its tools.
+- writing a local map as a file of its own, if this run had to discover its
+  tools.
 
 ## What this skill does not do
 
