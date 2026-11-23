@@ -28,6 +28,7 @@ uses only the lines that bear on it.
 Read by the `workspace-setup` skill (section "Local map first"); it overrides the skill's defaults.
 - CLAUDE.md template picker: `<skill name>`; template collection in `<path>`.
 - House order of CLAUDE.md sections: <A, B, C...>.
+- CLAUDE.md size: <target and ceiling in bytes>; starting template: <name>.
 - Notes vault: `<path>`; project notes in `<folder pattern>`; kept by `<note-sync skill>`.
 - Project manager: <tool>, <database or page>.
 - Automation recommender: `<skill name>`, for code repositories.

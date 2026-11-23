@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: heavy-claude-md-flagged
+expected_outcome: |
+  Reads the existing CLAUDE.md and states its size. Says that the "Current state" section is merged history and that the release steps are a long procedure, and proposes moving each to its own file with a one-line pointer left in the CLAUDE.md. Keeps the user-written rules. Does not trim or rewrite the existing CLAUDE.md on its own: it is unchanged at the end of the run.
+context:
+  scaffold_script: place-files.sh

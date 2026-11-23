@@ -29,6 +29,8 @@ Questions (proposed answer in each; change what is wrong)
    claude.ai Project only: name "<...>", description "<one line>".
    Does a workspace for this work already exist? <yes, paste its
    instructions | no>.
+   Claude Code folder only: kept up for weeks or months, or a one-off?
+   Is there already a record of its decisions or progress anywhere?
 
 3. Which source wins for each kind of data?
    (one row per kind the inventory found; these rows are only examples)
@@ -69,6 +71,9 @@ delivery looks like. Ask only when step 1 could not decide.
 **2. Purpose.** Becomes the role or opening of the instructions. The "not for"
 half matters as much: it stops a Project for a newsletter from being used to
 plan the whole business, and tells Claude when to say "this belongs elsewhere".
+The two Claude Code lines are what a CLAUDE.md template picker usually needs to
+choose a template and decide on a history file; asking them here keeps its
+questions inside this one round.
 
 **3. Source of truth per kind of data.** The core of the workspace. Every kind of
 data gets exactly one winning source; the drafts link to it and never restate

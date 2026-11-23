@@ -68,7 +68,8 @@ A map can name: the CLAUDE.md template picker and where its template collection
 lives; the notes vault and where project notes go; the project manager where
 work is tracked (a Notion database, for example); the automation recommender and
 the skill used to dry-run instructions; the house order of sections in a
-CLAUDE.md; language and style rules for drafts; and existing workspaces that
+CLAUDE.md, its starting template and its size budget; language and style rules
+for drafts; and existing workspaces that
 show what works. Whatever the map says overrides the defaults in this skill.
 
 With no map, discover: list the connectors, skills and file access this session
@@ -132,7 +133,9 @@ The batch covers:
 
 1. **Target**, only if step 1 left it open.
 2. **Purpose**: what this workspace is for, and what it is not for. For a
-   claude.ai Project, also its name and one-line description. Also whether a
+   claude.ai Project, also its name and one-line description. For a Claude
+   Code folder, also how long the work will be kept up and whether a record of
+   its decisions exists, which a template picker needs. Also whether a
    workspace for this work already exists: claude.ai Projects cannot be listed
    from a session, so ask, and if one exists, ask the user to paste its
    instructions.

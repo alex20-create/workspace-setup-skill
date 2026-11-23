@@ -56,7 +56,7 @@ The skill replies in the language you write in.
 |---|---|
 | `workspace-setup/SKILL.md` | The six-step flow and the rules behind it |
 | `workspace-setup/references/claude-ai-project.md` | Instructions in blocks, the sources map, generated copies, steps to create the Project |
-| `workspace-setup/references/claude-code-folder.md` | Hand-off to a template picker, plain section order, permissions in settings, existing files |
+| `workspace-setup/references/claude-code-folder.md` | Hand-off to a template picker, plain section order, the rules that keep a `CLAUDE.md` light, permissions and plugins in settings, existing files |
 | `workspace-setup/references/decision-questions.md` | The single batch of questions, with what each one is for |
 | `workspace-setup/references/local-map.md` | Where the local map lives, its format, and discovery without one |
 | `workspace-setup/evals/` | Test cases in the `claude plugin eval` layout |
