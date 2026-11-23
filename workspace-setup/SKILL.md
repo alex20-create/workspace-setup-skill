@@ -173,9 +173,14 @@ Write every deliverable in full and show it before writing anything anywhere:
 - **claude.ai Project**: follow `references/claude-ai-project.md`. The
   instructions, plus the context documents (usually one: a map of links to the
   sources).
-- **Claude Code folder**: follow `references/claude-code-folder.md`. The
-  `CLAUDE.md` comes from the template picker the map names or discovery
-  found: hand it the target
+- **Claude Code folder**: read `references/claude-code-folder.md` before
+  drafting and follow it; the draft is not ready until it has been checked
+  against that file. Two of its rules hold for every `CLAUDE.md`, new or
+  already in the folder, because the file loads whole into every session:
+  state its size in bytes, and move merged history and long procedures to
+  their own files with a one-line pointer instead of keeping or deleting
+  them. The `CLAUDE.md` comes from the template picker the map names or
+  discovery found: hand it the target
   folder and the answers from step 3, and let it choose and fill the template;
   template choice is its job, not this skill's. Without a template picker, write
   the CLAUDE.md directly, in the house order of sections from the map or the
@@ -195,8 +200,8 @@ we left off", "add the export feature"), and reports every doubt, contradiction
 or missing fact it runs into. The author cannot see these gaps, because the
 author already knows the context the drafts forgot to state.
 
-Use the instruction-testing skill the map names (a skill improver with a
-clean-subagent dry run, for example). If that skill accepts only skills as
+Use the instruction-testing skill the map names or discovery found (a skill
+improver with a clean-subagent dry run, for example). If that skill accepts only skills as
 targets, follow its protocol directly: launch one subagent with the drafts and
 the request, no other context, and ask for its doubts. Before launching, state
 the estimated cost, taking the reference figure from the instruction-testing
@@ -221,12 +226,13 @@ Deliver:
 **Claude Code folder.** Write the files only after an explicit yes to the shown
 drafts, list every path written, and do not commit unless asked.
 
-Then offer, one at a time and only where the map or discovery found the tool:
+Then offer, one at a time:
 
-- the note-sync skill, to create or update this work's note in the vault, if
-  the vault's conventions give this kind of work a note (the map may say which
-  kinds do);
-- the automation recommender, when the folder is a code repository;
+- the note-sync skill, where the map or discovery found one, to create or
+  update this work's note in the vault, if the vault's conventions give this
+  kind of work a note (the map may say which kinds do);
+- the automation recommender, where the map or discovery found one, when the
+  folder is a code repository;
 - writing a local map as a file of its own, if this run had to discover its
   tools.
 
